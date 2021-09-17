@@ -25,6 +25,7 @@ public class WordGram {
 		myHash = 0;
 
 		// TODO: initialize all instance variables
+
 	}
 
 	/**
@@ -86,6 +87,11 @@ public class WordGram {
 	@Override
 	public String toString(){
 		// TODO: Complete this method, assign to myToString as needed
-		return myToString;
+		if(this.myToString != null){
+			this.myToString = String.join(" ", this.myWords);
+			return myToString;
+		} else {
+			return myToString;
+		}
 	}
 }
