@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * A WordGram represents a sequence of strings
@@ -30,7 +31,8 @@ public class WordGram {
 				myWords_index += 1;
 			}
 		}
-		myToString = null;
+		//myToString = null;
+		myToString = myWords.toString();
 		myHash = 0;
 
 	}
@@ -95,12 +97,10 @@ public class WordGram {
 		// TODO: complete this method: assign to myHash as needed
 		//return myHash;
 		// note: hashcodes must be ints
-		if(this.hashCode() == 0){
+		if(this.myHash == 0){
 			this.myHash = this.toString().hashCode();
-			return this.myHash;
-		} else {
-			return this.myHash;
 		}
+		return this.myHash;
 	}
 	
 
@@ -137,9 +137,7 @@ public class WordGram {
 		// TODO: Complete this method, assign to myToString as needed
 		if(this.myToString != null){
 			this.myToString = String.join(" ", this.myWords);
-			return this.myToString;
-		} else {
-			return this.myToString;
 		}
+		return this.myToString;
 	}
 }
