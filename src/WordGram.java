@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * A WordGram represents a sequence of strings
@@ -109,8 +110,24 @@ public class WordGram {
 	 * @return
 	 */
 	public WordGram shiftAdd(String last) {
-		WordGram wg = new WordGram(myWords,0,myWords.length);
+		//WordGram wg = new WordGram(myWords,0,myWords.length);
 		// TODO: Complete this method
+
+		// create an ArrayList to store and modify word gram words
+		ArrayList<String> words = new ArrayList<>();
+		words.addAll(Arrays.asList(this.myWords));
+
+		// remove the first element from the ArrayList
+		words.remove(0);
+
+		// add the parameter "last" to end of the ArrayList
+		words.add(last);
+
+		// convert words ArrayList to array which can be passed to WordGram() constructor
+		String[] wordsArray = words.toArray(new String[words.size()]);
+
+		// create a new wordgram object where myWords is wordsArray
+		WordGram wg = new WordGram(wordsArray,0,myWords.length);
 
 		return wg;
 	}
