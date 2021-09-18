@@ -52,7 +52,9 @@ public class WordGram {
 	 */
 	public int length(){
 		// TODO: change this
-		return 0;
+		//return 0;
+		return this.myWords.length;
+
 	}
 
 
