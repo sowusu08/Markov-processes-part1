@@ -63,18 +63,41 @@ public class WordGram {
 	 */
 	@Override
 	public boolean equals(Object other) {
+		// TODO: Complete this method
 		if (! (other instanceof WordGram) || other == null){
 			return false;
-		}
-		// TODO: Complete this method
+		} else {
+			WordGram wg = (WordGram) other;
 
-		return true;
+			// if the arrays are of different lengths they are not equal; return false
+			if(this.myWords.length != wg.myWords.length){
+				return false;
+			}
+
+			// if the arrays are of the same length check the equivalency of each parallel element
+			boolean equiv = true;
+			for(int i = 0; i < this.myWords.length; i++){
+				if(this.myWords[i] != wg.myWords[i]){
+					equiv = false;
+				}
+			}
+			return equiv;
+		}
+
+		//return true;
 	}
 
 	@Override
 	public int hashCode(){
 		// TODO: complete this method: assign to myHash as needed
-		return myHash;
+		//return myHash;
+		// note: hashcodes must be ints
+		if(this.hashCode() == 0){
+			this.myHash = this.toString().hashCode();
+			return this.myHash;
+		} else {
+			return this.myHash;
+		}
 	}
 	
 
@@ -95,9 +118,9 @@ public class WordGram {
 		// TODO: Complete this method, assign to myToString as needed
 		if(this.myToString != null){
 			this.myToString = String.join(" ", this.myWords);
-			return myToString;
+			return this.myToString;
 		} else {
-			return myToString;
+			return this.myToString;
 		}
 	}
 }
