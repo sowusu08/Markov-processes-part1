@@ -21,10 +21,16 @@ public class WordGram {
 	 */
 	public WordGram(String[] source, int start, int size) {
 		myWords = new String[size];
+		// TODO: initialize all instance variables
+		int myWords_index = 0;
+		for(int i = 0; i < source.length; i++){
+			if(i >= start && myWords_index < (size - 1)){
+				myWords[myWords_index] = source[i];
+				myWords_index += 1;
+			}
+		}
 		myToString = null;
 		myHash = 0;
-
-		// TODO: initialize all instance variables
 
 	}
 
