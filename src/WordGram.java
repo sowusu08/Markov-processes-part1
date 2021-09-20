@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * A WordGram represents a sequence of strings
@@ -75,17 +76,36 @@ public class WordGram {
 			WordGram wg = (WordGram) other;
 
 			// if the arrays are of different lengths they are not equal; return false
-			if(this.myWords.length != wg.myWords.length){
+			//if(this.myWords.length != wg.myWords.length){
+			if(this.length() != wg.length()){
 				return false;
 			}
 
 			// if the arrays are of the same length check the equivalency of each parallel element
+			// code to sort myWords
+			//ArrayList<String> object_list = new ArrayList<>();
+			//ArrayList<String> compare_list = new ArrayList<>();
+
+			//object_list.addAll(Arrays.asList(this.myWords));
+			//compare_list.addAll(Arrays.asList(wg.myWords));
+
+			//Collections.sort(object_list);
+			//Collections.sort(compare_list);
+			//System.out.println(object_list+" "+compare_list);
+
 			boolean equiv = true;
-			for(int i = 0; i < this.myWords.length; i++){
-				if(this.myWords[i] != wg.myWords[i]){
+			for(int i = 0; i < this.length(); i += 1){
+				if(! this.myWords[i].equals(wg.myWords[i])){		// use .equals() friend...we've been through this smh
+				//if(object_list.get(i) != compare_list.get(i)){
+					//System.out.println(this.myWords[i]+" "+wg.myWords[i]);
 					equiv = false;
+					//System.out.println(Arrays.asList(this.myWords)+" "+Arrays.asList(wg.myWords));
+					//System.out.println("Using equiv; "+equiv);
+					return equiv;
 				}
 			}
+			//System.out.println(Arrays.asList(this.myWords)+" "+Arrays.asList(wg.myWords));
+			//System.out.println("Using equiv; "+equiv);
 			return equiv;
 		}
 
