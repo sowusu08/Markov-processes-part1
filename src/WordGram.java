@@ -26,7 +26,7 @@ public class WordGram {
 		// TODO: initialize all instance variables
 		int myWords_index = 0;
 		for(int i = 0; i < source.length; i++){
-			if(i >= start && myWords_index < (size - 1)){
+			if(i >= start && myWords_index < (size)){
 				myWords[myWords_index] = source[i];
 				myWords_index += 1;
 			}
